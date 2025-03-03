@@ -76,10 +76,10 @@ export default function MyBookings() {
             >
                 
               {filteredBookings.length > 0 &&
-                filteredBookings.map((event) => (
+                filteredBookings.map((restaurant) => (
                   <RestaurantCard
-                    key={event["restaurantName"]}
-                    details={event}
+                    key={restaurant["restaurantName"]}
+                    details={restaurant}
                     booking={true}
                   />
                 ))}

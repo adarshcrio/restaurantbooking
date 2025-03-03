@@ -123,10 +123,10 @@ export default function Search() {
               mr="24px"
             >
               {restaurants.length > 0 &&
-                restaurants.map((event) => (
+                restaurants.map((restaurant) => (
                   <RestaurantCard
-                    key={event["restaurantName"]}
-                    details={event}
+                    key={restaurant["restaurantName"]}
+                    details={restaurant}
                     availableSlots={availableSlots}
                     handleBooking={handleBookingModal}
                   />
