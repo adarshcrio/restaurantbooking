@@ -116,7 +116,7 @@ export default function EventCard({
                 onClick={() => setShowCalendar((prev) => !prev)}
               >
                 {!showCalendar
-                  ? "Book FREE Event"
+                  ? "Book FREE Reservation"
                   : "Hide Booking Calendar"}
               </Button>
             </>
