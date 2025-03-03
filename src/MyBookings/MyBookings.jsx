@@ -1,5 +1,5 @@
 import { Box, Typography, Container, Stack } from "@mui/material";
-import EventCard from "../components/EventCard/EventCard";
+import RestaurantCard from "../components/RestaurantCard/RestaurantCard";
 import { useEffect, useState } from "react";
 import cta from "../assets/restoffer1.png";
 import SearchBar from "../components/SearchBar/SearchBar";
@@ -19,7 +19,7 @@ export default function MyBookings() {
   }, [bookings]);
 
   //Separate page/component to render all the booked events of user alogwith chosen date and time slot
-  //It utilises EventCard component to generate the cards with data
+  //It utilises RestaurantCard component to generate the cards with data
   return (
     <>
       <NavBar />
@@ -77,7 +77,7 @@ export default function MyBookings() {
                 
               {filteredBookings.length > 0 &&
                 filteredBookings.map((event) => (
-                  <EventCard
+                  <RestaurantCard
                     key={event["restaurantName"]}
                     details={event}
                     booking={true}

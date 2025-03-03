@@ -2,7 +2,7 @@ import { Container, Stack, Box, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import EventCard from "../components/EventCard/EventCard";
+import RestaurantCard from "../components/RestaurantCard/RestaurantCard";
 import icon from "../assets/tick.png";
 import cta from "../assets/restoffer2.png";
 import SearchEvent from "../components/SearchEvent/SearchEvent";
@@ -124,7 +124,7 @@ export default function Search() {
             >
               {events.length > 0 &&
                 events.map((event) => (
-                  <EventCard
+                  <RestaurantCard
                     key={event["restaurantName"]}
                     details={event}
                     availableSlots={availableSlots}

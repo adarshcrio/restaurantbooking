@@ -5,7 +5,7 @@ import Calendar from "../Calendar/Calendar";
 import { useState } from "react";
 import { format } from "date-fns";
 
-export default function EventCard({
+export default function RestaurantCard({
   details,
   availableSlots,
   handleBooking,
