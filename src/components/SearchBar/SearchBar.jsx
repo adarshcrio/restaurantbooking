@@ -25,7 +25,7 @@ export default function SearchBar({ list, filterList }) {
       <Stack direction="row" spacing={2}>
         <TextField
           type="text"
-          label="Search By Event"
+          label="Search By Restaurant"
           variant="outlined"
           fullWidth
           value={inputText}

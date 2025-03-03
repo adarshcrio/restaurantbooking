@@ -5,14 +5,14 @@ import { useSearchParams } from "react-router-dom";
 import RestaurantCard from "../components/RestaurantCard/RestaurantCard";
 import icon from "../assets/tick.png";
 import cta from "../assets/restoffer2.png";
-import SearchEvent from "../components/SearchEvent/SearchEvent";
+import SearchRestaurant from "../components/SearchRestaurant/SearchRestaurant";
 import BookingModal from "../components/BookingModal/BookingModal";
 import AutohideSnackbar from "../components/AutohideSnackbar/AutohideSnackbar";
 import NavBar from "../components/NavBar/NavBar";
 
 export default function Search() {
   const [seachParams, setSearchParams] = useSearchParams();
-  const [events, setEvents] = useState([]);
+  const [restaurants, setrestaurants] = useState([]);
   const [state, setState] = useState(seachParams.get("state"));
   const [city, setCity] = useState(seachParams.get("city"));
   const availableSlots = {//changed
@@ -25,16 +25,16 @@ export default function Search() {
   const [showBookingSuccess, setShowBookingSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  //API to fetch events based on state and city selection 
+  //API to fetch restauranst based on state and city selection 
   useEffect(() => {
-    const getEvents = async () => {
-      setEvents([]);
+    const getrestaurants = async () => {
+      setrestaurants([]);
       setIsLoading(true);
       try {
         const data = await axios.get(
           `https://restaurantdata.onrender.com/restaurants?state=${state}&city=${city}`
         );
-        setEvents(data.data);
+        setrestaurants(data.data);
         setIsLoading(false);
       } catch (err) {
         console.log(err);
@@ -43,7 +43,7 @@ export default function Search() {
     };
 
     if (state && city) {
-      getEvents();
+      getrestaurants();
     }
   }, [state, city]);
 
@@ -87,12 +87,12 @@ export default function Search() {
               boxShadow: "0 0 10px rgba(0,0,0,0.1)",
             }}
           >
-            <SearchEvent />
+            <SearchRestaurant />
           </Container>
         </Box>
 
         <Container maxWidth="xl" sx={{ pt: 8, pb: 10, px: { xs: 0, md: 4 } }}>
-          {events.length > 0 && (
+          {restaurants.length > 0 && (
             <Box sx={{ mb: 3 }}>
               <Typography
                 component="h1"
@@ -101,7 +101,7 @@ export default function Search() {
                 mb={2}
                 fontWeight={500}
               >
-                {`${events.length} events available in `}
+                {`${restaurants.length} Restaurants available in `}
                 <span style={{ textTransform: "capitalize" }}>
                   {city.toLocaleLowerCase()}
                 </span>
@@ -122,8 +122,8 @@ export default function Search() {
               width={{ xs: 1, md: "calc(100% - 384px)" }}
               mr="24px"
             >
-              {events.length > 0 &&
-                events.map((event) => (
+              {restaurants.length > 0 &&
+                restaurants.map((event) => (
                   <RestaurantCard
                     key={event["restaurantName"]}
                     details={event}

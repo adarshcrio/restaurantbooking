@@ -4,9 +4,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-//Component to search the events based on State and City selection.
-//API used to fetch details of event and set the values in formData
-export default function SearchEvent() {
+//Component to search the restaurant based on State and City selection.
+//API used to fetch details of restaurant and set the values in formData
+export default function SearchRestaurant() {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
   const [formData, setFormData] = useState({ state: "", city: "" });

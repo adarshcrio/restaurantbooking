@@ -1,6 +1,6 @@
 import { Container, Box, Stack } from "@mui/material";
 import HeroSlider from "../components/HeroSlider/HeroSlider";
-import SearchEvent from "../components/SearchEvent/SearchEvent";
+import SearchRestaurant from "../components/SearchRestaurant/SearchRestaurant";
 import FAQs from "../components/Sections/FAQs/FAQs";
 import OurFamilies from "../components/Sections/OurFamilies/OurFamilies";
 import Blogs from "../components/Sections/Blogs/Blogs";
@@ -32,7 +32,7 @@ export default function Home() {
             spacing={10}
             boxShadow="0 0 12px rgba(0,0,0,0.1)"
           >
-            <SearchEvent />
+            <SearchRestaurant />
             <HeroServices />
           </Stack>
         </Container>

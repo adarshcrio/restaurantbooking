@@ -37,7 +37,7 @@ export default function NavBar() {
           py={2}
         >
           <Link to="/">
-            <img src={logo} alt="Event Tracker Logo" height={100} />
+            <img src={logo} alt="Restarant Booking Logo" height={100} />
           </Link>
 
           <Stack

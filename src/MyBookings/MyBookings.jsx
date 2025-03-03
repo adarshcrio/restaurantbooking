@@ -18,7 +18,7 @@ export default function MyBookings() {
     setFilteredBookings(bookings);
   }, [bookings]);
 
-  //Separate page/component to render all the booked events of user alogwith chosen date and time slot
+  //Separate page/component to render all the booked restaurants of user alogwith chosen date and time slot
   //It utilises RestaurantCard component to generate the cards with data
   return (
     <>
