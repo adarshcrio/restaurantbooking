@@ -101,7 +101,7 @@ export default function Search() {
                 mb={2}
                 fontWeight={500}
               >
-                {`${restaurants.length} Restaurants available in `}
+                {`${restaurants.length} restaurants available in `}
                 <span style={{ textTransform: "capitalize" }}>
                   {city}
                 </span>
