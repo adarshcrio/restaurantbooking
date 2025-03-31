@@ -37,7 +37,7 @@ export default function RestaurantCard({
             textTransform="capitalize"
             lineHeight={1}
           >
-            {details["restaurantName"].toLowerCase()}
+            {details["restaurantName"]}
           </Typography>
           <Typography
             textTransform="capitalize"

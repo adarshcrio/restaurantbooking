@@ -103,7 +103,7 @@ export default function Search() {
               >
                 {`${restaurants.length} Restaurants available in `}
                 <span style={{ textTransform: "capitalize" }}>
-                  {city.toLocaleLowerCase()}
+                  {city}
                 </span>
               </Typography>
               <Stack direction="row" spacing={2}>
